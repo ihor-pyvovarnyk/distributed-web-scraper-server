@@ -1,0 +1,9 @@
+{
+  "version": "0.0.0",
+  "collectorUrl": "https://habrahabr.ru/page%d/",
+  "masterServerNode": "http://localhost:3000",
+  "scraperServerNodes": [
+    "http://localhost:3001",
+    "http://localhost:3002"
+  ]
+}

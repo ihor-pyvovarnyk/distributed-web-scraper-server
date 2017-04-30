@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/ihor-pyvovarnyk/distributed-web-scraper-server#readme",
   "dependencies": {
+    "express": "^4.15.2",
     "jsdom": "^9.12.0",
     "mongodb": "^2.2.26",
     "printf": "^0.2.5",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "yargs": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
