@@ -31,8 +31,8 @@ describe('Parser class', function() {
         assert(parser instanceof Parser);
     });
 
-    it('should create Parser object', basicTest(false));
-    it('should have all required properties in result data object', basicTest(false));
+    it('should successfully parse example html', basicTest(false));
+    it('should have all required properties in result data object', basicTest(true));
 
     it('should find head>title', selectorTest('head>title', 1, 'Page title'));
     it('should find single h1 tag', selectorTest('h1', 1, 'H1 title'));
