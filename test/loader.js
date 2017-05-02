@@ -31,7 +31,7 @@ describe('Loader class', function() {
                         done('Wrong status code');
                     } else if (typeof body !== 'string') {
                         done('Wrong body property type in results');
-                    } else if (body !== '') {
+                    } else if (body === '') {
                         done('Empty body');
                     } else if (body.indexOf(contain) === -1) {
                         done('Didn\'t find substring in body');
