@@ -1,0 +1,39 @@
+{
+  "urlCollector": {
+    "verbose": true,
+    "pagesLimit": 10,
+    "paginationUrlTemplate": "https://stackoverflow.com/questions?page={PAGE_NUMBER}&sort=newest",
+    "targetLinksSelector": "#questions .question-summary a.question-hyperlink"
+  },
+  "dataFetcher": {
+    "verbose": true,
+    "saveListMaxSize": 5,
+    "dataExtractionTemplate": {
+      "data": {
+        "title": "&title",
+        "rate": "&rate",
+        "tags": "&tags"
+      },
+      "getters": {
+        "title": {
+          "$find": {"$selector": "#question-header a.question-hyperlink", "$get": "text"}
+        },
+        "rate": {
+          "$find": {"$selector": "#mainbar .vote .vote-count-post", "$get": "int"}
+        },
+        "tags": {
+          "$find": {
+            "$selector": ".post-taglist a.post-tag",
+            "$each": {"$get": "text"}
+          }
+        }
+      }
+    },
+    "storageConfig": {
+      "host": "localhost",
+      "port": "27017",
+      "dbName": "web-scrapper",
+      "collection": "myCollection"
+    }
+  }
+}
